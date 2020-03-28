@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import Question from './components/Question'
+import Results from './components/Results'
 
 export default class App extends Component {
 
   state = { 
     questions: null,
-    count: 0
+    count: 0,
+    completed: false
   }
 
   componentDidMount() { 
@@ -15,26 +17,30 @@ export default class App extends Component {
   }
 
   displayQuestion = () => {
-    return <Question questions={this.state.questions[this.state.count]}
+    return <Question 
+      questions={this.state.questions[this.state.count]}
       nextQuestion={this.nextQuestion}
     /> 
   }
 
   nextQuestion = () => {
-    if(this.state.count < this.state.questions.length){
+    if(this.state.count < this.state.questions.length-1){
       this.setState({
         count: this.state.count + 1
       });
     } else {
-      //something else
+      this.setState({completed:true})
     }
   }
-
 
   render() {
     return (
       <div>
-        {this.state.questions && this.displayQuestion()}
+        {this.state.completed ? 
+          <Results questions={this.state.questions} />
+          :
+          this.state.questions && this.displayQuestion()
+        }
       </div>
     )
   }
