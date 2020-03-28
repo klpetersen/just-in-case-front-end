@@ -4,7 +4,8 @@ import Question from './components/Question'
 export default class App extends Component {
 
   state = { 
-    questions: null
+    questions: null,
+    count: 0
   }
 
   componentDidMount() { 
@@ -13,10 +14,24 @@ export default class App extends Component {
       .then(questions => this.setState({questions}))
   }
 
+  displayQuestion = () => {
+    return <Question questions={this.state.questions[this.state.count]}
+      nextQuestion={this.nextQuestion}
+    /> 
+  }
+
+  nextQuestion = () => {
+    this.setState({
+      count: this.state.count + 1
+    });
+    // this.displayQuestion()
+  }
+
+
   render() {
     return (
       <div>
-        <Question questions={this.state.questions}/> 
+        {this.state.questions && this.displayQuestion()}
       </div>
     )
   }
