@@ -13,13 +13,15 @@ export default class App extends Component {
   componentDidMount() { 
     fetch('http://localhost:3000/questions')
       .then(resp => resp.json()) 
-      .then(questions => this.setState({questions}))
+      .then(questions => this.setState({questions: questions.sort(function(a,b){return 0.5 - Math.random()})}))
   }
 
   displayQuestion = () => {
     return <Question 
       questions={this.state.questions[this.state.count]}
       nextQuestion={this.nextQuestion}
+      count={this.state.count+1}
+      questionsCount={this.state.questions.length}
     /> 
   }
 
