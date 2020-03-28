@@ -11,16 +11,16 @@ export default function Question(props) {
         let answer = props.questions.answer;
         let result = value === answer ? 'correct' : 'wrong';
         console.log(result)
-        // fetch(`http://localhost:3000/questions/${id}`,{
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'Accept': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         user_answer: result
-        //     })
-        // })
+        fetch(`http://localhost:3000/questions/${id}`,{
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                user_answer: result
+            })
+        })
         answerRef.style.display="block"
         disableButtons();
       }
@@ -45,7 +45,6 @@ export default function Question(props) {
             <div className='user-answers'>
                 <div> 
                     {/* The buttons will change color to either green or red depending on the answer */}
-                    {/* disable buttons after selecting an answer */}
                     <button className='button' ref={ref => {trueRef = ref}}
                     onClick={() => submitAnswer(true,props.questions.id)}>TRUE</button>
                 </div>

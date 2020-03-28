@@ -21,10 +21,13 @@ export default class App extends Component {
   }
 
   nextQuestion = () => {
-    this.setState({
-      count: this.state.count + 1
-    });
-    // this.displayQuestion()
+    if(this.state.count < this.state.questions.length){
+      this.setState({
+        count: this.state.count + 1
+      });
+    } else {
+      //something else
+    }
   }
 
 
