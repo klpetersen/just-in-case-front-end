@@ -1,19 +1,39 @@
 import React, { Component } from 'react'
 import Question from './components/Question'
 import Results from './components/Results'
+import FrontPage from './components/FrontPage'
 
 export default class App extends Component {
 
   state = { 
     questions: null,
     count: 0,
-    completed: false
+    completed: false,
+    frontPage: true
   }
 
   componentDidMount() { 
+    this.fetchQuestions()
+  }
+
+  fetchQuestions = () => {
     fetch('http://localhost:3000/questions')
       .then(resp => resp.json()) 
       .then(questions => this.setState({questions: questions.sort(function(a,b){return 0.5 - Math.random()})}))
+  }
+
+  toggleStartQuiz = () => {
+    this.setState({frontPage: !this.state.frontPage})
+  }
+  
+  reset = () => {
+    this.fetchQuestions();
+    this.toggleStartQuiz();
+    this.setState({
+      count: 0,
+      completed: false
+    })
+
   }
 
   displayQuestion = () => {
@@ -38,10 +58,13 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {this.state.completed ? 
-          <Results questions={this.state.questions} />
+        {this.state.frontPage ?
+          <FrontPage toggleStartQuiz={this.toggleStartQuiz} />
           :
-          this.state.questions && this.displayQuestion()
+          this.state.completed ? 
+            <Results questions={this.state.questions} reset={this.reset} />
+            :
+            this.state.questions && this.displayQuestion()
         }
       </div>
     )

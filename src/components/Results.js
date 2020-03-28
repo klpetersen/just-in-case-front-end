@@ -2,6 +2,12 @@ import React from 'react'
 import '../css/Results.css'
 
 export default function Results(props) {
+
+    const handleBack = () => {
+        props.reset();
+    }
+
+
     return (
         <div className='results'>
             {props.questions.map(question =>
@@ -18,7 +24,7 @@ export default function Results(props) {
                     </div>
                 </div>
             )}
-            <button>TRY AGAIN</button>
+            <button onClick={handleBack}>BACK</button>
         </div>
     )
 }
