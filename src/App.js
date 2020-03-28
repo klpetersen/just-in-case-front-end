@@ -33,7 +33,6 @@ export default class App extends Component {
       count: 0,
       completed: false
     })
-
   }
 
   displayQuestion = () => {

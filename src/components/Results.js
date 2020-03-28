@@ -7,7 +7,6 @@ export default function Results(props) {
         props.reset();
     }
 
-
     return (
         <div className='results'>
             {props.questions.map(question =>
@@ -16,11 +15,11 @@ export default function Results(props) {
                         {question.question}
                     </div>
                     <div className='reason'>
-                        {question.reason}
-                        {question.source}
+                        {question.reason}<br></br>
+                        <a href={question.source}>{question.source}</a>
                     </div>
                     <div className='stats'>
-                        {question.percent_correct}% got this correct.
+                        {question.percent_correct.toFixed(2)}% got this correct.
                     </div>
                 </div>
             )}
