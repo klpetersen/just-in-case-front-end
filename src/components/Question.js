@@ -7,7 +7,6 @@ export default function Question(props) {
     let trueRef = React.createRef();
     let falseRef = React.createRef();
 
-
     const submitAnswer = (value, id) => {
         let answer = props.questions.answer;
         let result = value === answer ? 'correct' : 'wrong';
