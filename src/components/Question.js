@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/Question.css'
 
 export default function Question(props) {
 
@@ -42,6 +43,7 @@ export default function Question(props) {
             <h1 className='question'> 
                 {props.questions.question}
             </h1>
+            <p>{props.count}/{props.questionsCount}</p>
             <div className='user-answers'>
                 <div> 
                     {/* The buttons will change color to either green or red depending on the answer */}
