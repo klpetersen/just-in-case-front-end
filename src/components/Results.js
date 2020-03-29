@@ -47,6 +47,7 @@ export default function Results(props) {
                 </div>
             )}
             <button onClick={handleBack}>BACK</button>
+            <button onClick={props.handleResources}>More Resources</button>
         </div>
     )
 }

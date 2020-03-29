@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Question from './components/Question'
 import Results from './components/Results'
 import FrontPage from './components/FrontPage'
+import Resources from './components/Resources'
 import './css/Shared.css'
 
 export default class App extends Component {
@@ -11,7 +12,8 @@ export default class App extends Component {
     count: 0,
     completed: false,
     frontPage: true,
-    totalRight: 0
+    totalRight: 0,
+    resources: false
   }
 
   componentDidMount() { 
@@ -34,7 +36,8 @@ export default class App extends Component {
     this.setState({
       count: 0,
       completed: false,
-      totalRight: 0
+      totalRight: 0,
+      resources: false
     })
   }
 
@@ -46,7 +49,11 @@ export default class App extends Component {
       questionsCount={this.state.questions.length}
     /> 
   }
-
+  handleResources = () => {
+    this.setState({
+      resources: true
+    })
+  }
   nextQuestion = (userResult) => {
     
     if(this.state.count < this.state.questions.length-1){
@@ -63,13 +70,16 @@ export default class App extends Component {
   render() {
     return (
       <div className='main-container'>
-        {this.state.frontPage ?
-          <FrontPage toggleStartQuiz={this.toggleStartQuiz} />
-          :
-          this.state.completed ? 
-            <Results questions={this.state.questions} totalRight={this.state.totalRight} reset={this.reset} />
+        {this.state.resources ?
+          <Resources />
+          : 
+          this.state.frontPage ?
+            <FrontPage toggleStartQuiz={this.toggleStartQuiz} />
             :
-            this.state.questions && this.displayQuestion()
+            this.state.completed ? 
+              <Results questions={this.state.questions} handleResources={this.handleResources}totalRight={this.state.totalRight} reset={this.reset} />
+              :
+              this.state.questions && this.displayQuestion()
         }
       </div>
     )
