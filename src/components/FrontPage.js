@@ -1,12 +1,15 @@
 import React from 'react'
 import '../css/FrontPage.css'
+import '../css/Shared.css'
 
 export default function FrontPage(props) {
     return (
-        <div class="body">
+        <div class='container'>
+            <div className='logo-header'> 
+            </div>
             <h1>Just In Ques(o)</h1>
-            <p>stuff</p>
-            <button onClick={props.toggleStartQuiz}>Start Quiz</button>
+                <button onClick={props.toggleStartQuiz}>Start Quiz</button>
+
         </div>
     )
 }

@@ -42,7 +42,7 @@ export default function Question(props) {
       }
     
     return (
-        <div class="body">
+        <div class="question-container">
             <p>{props.count}/{props.questionsCount}</p>
             <h1 className='question'> 
                 {props.questions.question}

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Question from './components/Question'
 import Results from './components/Results'
 import FrontPage from './components/FrontPage'
+import './css/Shared.css'
 
 export default class App extends Component {
 
@@ -56,7 +57,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='main-container'>
         {this.state.frontPage ?
           <FrontPage toggleStartQuiz={this.toggleStartQuiz} />
           :
