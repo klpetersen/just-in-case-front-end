@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../css/Question.css'
 
 export default function Question(props) {
@@ -6,11 +6,12 @@ export default function Question(props) {
     let answerRef = React.createRef();
     let trueRef = React.createRef();
     let falseRef = React.createRef();
+    const [userResult, setUserResult] = useState(null);
 
     const submitAnswer = (value, id) => {
         let answer = props.questions.answer;
         let result = value === answer ? 'correct' : 'wrong';
-        console.log(result)
+        setUserResult(result);
         fetch(`https://justincase-backend.herokuapp.com/questions/${id}`,{
             method: 'PATCH',
             headers: {
@@ -38,7 +39,7 @@ export default function Question(props) {
         trueRef.className = 'button';
         falseRef.className = 'button';
         answerRef.style.display="none";
-        props.nextQuestion();
+        props.nextQuestion(userResult);
       }
     
     return (

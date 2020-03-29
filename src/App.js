@@ -10,7 +10,8 @@ export default class App extends Component {
     questions: null,
     count: 0,
     completed: false,
-    frontPage: true
+    frontPage: true,
+    totalRight: 0
   }
 
   componentDidMount() { 
@@ -32,7 +33,8 @@ export default class App extends Component {
     this.toggleStartQuiz();
     this.setState({
       count: 0,
-      completed: false
+      completed: false,
+      totalRight: 0
     })
   }
 
@@ -45,14 +47,17 @@ export default class App extends Component {
     /> 
   }
 
-  nextQuestion = () => {
+  nextQuestion = (userResult) => {
+    
     if(this.state.count < this.state.questions.length-1){
       this.setState({
-        count: this.state.count + 1
+        count: this.state.count + 1,
+        totalRight: userResult === 'correct' ? this.state.totalRight + 1 : this.state.totalRight 
       });
     } else {
       this.setState({completed:true})
     }
+    console.log(this.state.totalRight);
   }
 
   render() {
@@ -62,7 +67,7 @@ export default class App extends Component {
           <FrontPage toggleStartQuiz={this.toggleStartQuiz} />
           :
           this.state.completed ? 
-            <Results questions={this.state.questions} reset={this.reset} />
+            <Results questions={this.state.questions} totalRight={this.state.totalRight} reset={this.reset} />
             :
             this.state.questions && this.displayQuestion()
         }
