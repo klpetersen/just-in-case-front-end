@@ -22,27 +22,31 @@ export default function Question(props) {
             })
         })
         answerRef.style.display="block"
-        disableButtons();
+        disableButtons(answer, value);
       }
 
-      const disableButtons = () => {
+      const disableButtons = (answer, value) => {
           trueRef.disabled = true;
+          trueRef.className = value === answer && answer ? 'button correct-button' : 'button disabled-button'
           falseRef.disabled = true;
+          falseRef.className =  value === answer && !answer ? 'button correct-button' : 'button disabled-button'
       }
 
       const handleNext = () => {
         trueRef.disabled = false;
         falseRef.disabled = false;
+        trueRef.className = 'button';
+        falseRef.className = 'button';
         answerRef.style.display="none";
         props.nextQuestion();
       }
     
     return (
-        <div>
+        <div class="body">
+            <p>{props.count}/{props.questionsCount}</p>
             <h1 className='question'> 
                 {props.questions.question}
             </h1>
-            <p>{props.count}/{props.questionsCount}</p>
             <div className='user-answers'>
                 <div> 
                     {/* The buttons will change color to either green or red depending on the answer */}
@@ -54,11 +58,11 @@ export default function Question(props) {
                     onClick={() => submitAnswer(false,props.questions.id)}>FALSE</button>
                 </div>
             </div>
-            <div ref={ref => {answerRef = ref}}
+            <div class="answer" ref={ref => {answerRef = ref}}
                 style={{display: 'none'}}
             >
-                <p>Answer: {props.questions.answer.toString().toUpperCase()}</p>
-                <p>{props.questions.reason}</p>
+                <p class="answer-title">Answer: {props.questions.answer.toString().toUpperCase()}</p>
+                <p class="answer-description">{props.questions.reason}</p>
                 <button className='button'
                     onClick={() => handleNext()}
                 >NEXT</button>

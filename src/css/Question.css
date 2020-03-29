@@ -1,0 +1,43 @@
+.body {
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+  width: 60%;
+}
+
+.user-answers{
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  background-color: #ccffcc;
+  color: black;
+  height: 50px;
+  width: 100px;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.disabled-button{
+  background-color: #bfbfbf;
+  color: #a6a6a6;
+}
+
+.correct-button{
+  background-color: yellow;
+  color: black;
+}
+
+.answer {
+  margin: 70px;
+}
+
+.answer-title{
+  font-size: 2rem;
+}
+
+.answer-description{
+  font-size: 1.2rem;
+}
