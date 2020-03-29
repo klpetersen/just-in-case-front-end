@@ -2,9 +2,12 @@
   background: url(../images/breaking-news-final.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%; 
+  background-size: cover;
+  width: 100vw; 
   height: 100vh; 
-  margin: auto;
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
   text-align: center;
   padding-top: 2rem; 
   opacity: 0.9;
@@ -18,7 +21,7 @@
 }
 
 .start-btn-container { 
-  margin-top: 35%
+  margin-bottom: 10vh;
 }
 
 .start-btn { 
