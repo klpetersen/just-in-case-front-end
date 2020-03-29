@@ -1,15 +1,38 @@
-import React from 'react'
+import React, {useState} from 'react'
 import '../css/Results.css'
 
 export default function Results(props) {
-
+    const [seeResults, setSeeResults] = useState(false);
     const handleBack = () => {
         props.reset();
     }
 
+    const punchLine = () => {
+        const percentage = props.totalRight * 1.0 / 16 * 100;
+        switch (true) {
+            case (percentage < 30.0):
+                return <div classname='punchline'> below 30 </div>;
+            case (percentage < 60.0):
+                return <div classname='punchline'> below 60</div>;                  
+            case (percentage < 80.0):
+                return <div classname='punchline'> below 80</div>;
+            case (percentage < 90.0):
+                return <div classname='punchline'> below 90</div>;
+            case (percentage < 100.0):
+                return <div classname='punchline'>below 100</div>;            
+            default:
+                return <div classname='punchline'>100</div>;
+        }   
+    }
+
     return (
         <div className='results'>
-            {props.questions.map(question =>
+            <header className='result-header'>
+                Results        
+            </header>
+            {punchLine()}
+            <button onClick={() => setSeeResults(true)}>See answers</button>
+            {seeResults && props.questions.map(question =>
                 <div className="question-box">
                     <div className='question'>
                         {question.question}
