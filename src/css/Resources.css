@@ -1,0 +1,43 @@
+.resource-container {
+    margin-left: 8%;
+}
+
+.resource h2 {
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
+}
+
+.resource-component h1{
+    text-align: center;
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
+}
+
+.resource-list {
+    border: solid;
+    border-radius: 20px;
+    padding: 1em;
+    background-color: #CDC;
+    width: 92%;
+}
+
+.resource-list a {
+    text-decoration: none;
+    color: black;
+    font-size: 110%;
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
+    cursor: pointer;
+}
+
+.resource-list a:hover {
+    font-size: 125%;
+    color: #ccffcc;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.856);
+}
+
+.resource-list li {
+    line-height: 2rem;
+    margin-left: 4%;
+}
