@@ -14,12 +14,10 @@ export default function Results(props) {
                 return <div className='punchline'> below 30 </div>;
             case (percentage < 60.0):
                 return <div className='punchline'> below 60</div>;                  
-            case (percentage < 80.0):
+            case (percentage == 80.0):
                 return <div className='punchline'> below 80</div>;
-            case (percentage < 90.0):
-                return <div className='punchline'> below 90</div>;
-            case (percentage < 100.0):
-                return <div className='punchline'>below 100</div>;            
+            case (percentage == 90.0):
+                return <div className='punchline'> below 90</div>;            
             default:
                 return <div className='punchline'>100</div>;
         }   

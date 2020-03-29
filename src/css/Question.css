@@ -31,7 +31,7 @@ p {
 .question-card {
   width: 60%;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 6%;
 }
 
 .question {
@@ -64,10 +64,25 @@ p {
   cursor: pointer;
 }
 
+
 .question-button:active, 
 .question-button:hover { 
   background-color: rgb(148, 206, 131);
   cursor: pointer;
+
+.next-button { 
+  background-color: #ccffcc;
+  color: black;
+  height: 50px;
+  width: 100px;
+  font-size: 1rem;
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
+.next-button:active, 
+.next-button:hover { 
+  background-color: white;
 }
 
 .disabled-button{
