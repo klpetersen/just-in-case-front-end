@@ -36,6 +36,10 @@
   box-shadow: rgba(0,0,0,0.7) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 50px;
 }
 
+.wrong-answer{
+  background-color: #ff8080;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -61,7 +65,7 @@ button{
   border-radius: 5px;
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .menu-button {

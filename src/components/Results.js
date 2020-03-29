@@ -31,7 +31,6 @@ export default function Results(props) {
                 <p>Results:</p>
                 {punchLine()}    
             </header>
-            
 
             <button className="menu-button" onClick={() => setSeeResults(!seeResults)}>See answers</button>
             {seeResults && props.questions.map(question =>
@@ -41,6 +40,8 @@ export default function Results(props) {
                     </div>
                     <div className='reason'>
                         {question.reason}<br></br>
+                        <br></br>
+                        <p className="bold">Source:</p>
                         <a href={question.source}>{question.source}</a>
                     </div>
                     <div className='stats'>
