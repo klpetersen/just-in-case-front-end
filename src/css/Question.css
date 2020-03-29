@@ -52,7 +52,7 @@ p {
   position: relative;
 }
 
-button{
+.question-button{
   background-color: #ccffcc;
   color: black;
   height: 50px;

@@ -28,10 +28,12 @@ export default function Results(props) {
     return (
         <div className='results'>
             <header className='result-header'>
-                Results        
+                <p>Results:</p>
+                {punchLine()}    
             </header>
-            {punchLine()}
-            <button onClick={() => setSeeResults(true)}>See answers</button>
+            
+
+            <button className="menu-button" onClick={() => setSeeResults(!seeResults)}>See answers</button>
             {seeResults && props.questions.map(question =>
                 <div className="question-box">
                     <div className='question'>
@@ -46,8 +48,9 @@ export default function Results(props) {
                     </div>
                 </div>
             )}
-            <button onClick={handleBack}>BACK</button>
-            <button onClick={props.handleResources}>More Resources</button>
+            <button className="menu-button" onClick={handleBack}>Back</button>
+            <button className="menu-button" onClick={props.handleResources}>More Resources</button>
+
         </div>
     )
 }
