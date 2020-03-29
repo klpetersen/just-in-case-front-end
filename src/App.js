@@ -9,7 +9,7 @@ export default class App extends Component {
 
   state = { 
     questions: null,
-    count: 15,
+    count: 0,
     completed: false,
     frontPage: true,
     totalRight: 0,
