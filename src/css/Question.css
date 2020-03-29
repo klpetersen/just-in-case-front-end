@@ -63,13 +63,18 @@ p {
   margin-right: 20px;
 }
 
+.question-button:active, 
+.question-button:hover { 
+  background-color: white;
+}
+
 .disabled-button{
   background-color: #bfbfbf;
   color: #a6a6a6;
 }
 
 .correct-button{
-  background-color: yellow;
+  background-color: rgb(114, 184, 93);
   color: black;
 }
 
