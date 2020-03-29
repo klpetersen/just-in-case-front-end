@@ -11,7 +11,7 @@ export default function Question(props) {
         let answer = props.questions.answer;
         let result = value === answer ? 'correct' : 'wrong';
         console.log(result)
-        fetch(`http://localhost:3000/questions/${id}`,{
+        fetch(`https://justincase-backend.herokuapp.com/questions/${id}`,{
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

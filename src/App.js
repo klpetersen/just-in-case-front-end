@@ -18,7 +18,7 @@ export default class App extends Component {
   }
 
   fetchQuestions = () => {
-    fetch('http://localhost:3000/questions')
+    fetch('https://justincase-backend.herokuapp.com/questions')
       .then(resp => resp.json()) 
       .then(questions => this.setState({questions: questions.sort(function(a,b){return 0.5 - Math.random()})}))
   }
