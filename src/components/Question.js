@@ -10,8 +10,8 @@ export default function Question(props) {
 
     const submitAnswer = (value, id) => {
         let answer = props.questions.answer;
-        props.storeUserAnswer(value);
         let result = value === answer ? 'correct' : 'wrong';
+        props.storeUserAnswer(result);
         setUserResult(result);
         fetch(`https://justincase-backend.herokuapp.com/questions/${id}`,{
             method: 'PATCH',
@@ -62,14 +62,14 @@ export default function Question(props) {
                             onClick={() => submitAnswer(false,props.questions.id)}>False</button>
                         </div>
                     </div>
-                    <p className="bold">{props.count}/{props.questionsCount}</p>
+                    <p className="bold">{props.count}/{'10'}</p>
                 </div>
                 <div className="answer card" ref={ref => {answerRef = ref}}
                     style={{display: 'none'}}
                 >
                     <p className="answer-title bold">Answer: {props.questions.answer.toString().toUpperCase()}</p>
                     <p className="answer-description">{props.questions.reason}</p>
-                    <button className='question-button'
+                    <button className='question-button '
                         onClick={() => handleNext()}
                     >Next</button>
                 </div>
