@@ -32,7 +32,8 @@ export default function Question(props) {
           trueRef.className = value === answer && answer ? 'question-button correct-button' : 'question-button disabled-button'
           falseRef.disabled = true;
           falseRef.className =  value === answer && !answer ? 'question-button correct-button' : 'question-button disabled-button'
-      }
+          
+        }
 
       const handleNext = () => {
         trueRef.disabled = false;
@@ -69,7 +70,7 @@ export default function Question(props) {
                 >
                     <p className="answer-title bold">Answer: {props.questions.answer.toString().toUpperCase()}</p>
                     <p className="answer-description">{props.questions.reason}</p>
-                    <button className='question-button '
+                    <button className='next-button'
                         onClick={() => handleNext()}
                     >Next</button>
                 </div>
