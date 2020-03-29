@@ -59,15 +59,14 @@ export default class App extends Component {
   render() {
     return (
       <div className='main-container'>
-        {/* {this.state.frontPage ?
+        {this.state.frontPage ?
           <FrontPage toggleStartQuiz={this.toggleStartQuiz} />
           :
           this.state.completed ? 
             <Results questions={this.state.questions} reset={this.reset} />
             :
             this.state.questions && this.displayQuestion()
-        } */}
-        <Resources />
+        }
       </div>
     )
   }
