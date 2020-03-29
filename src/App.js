@@ -43,17 +43,27 @@ export default class App extends Component {
 
   displayQuestion = () => {
     return <Question 
+      storeUserAnswer={this.storeUserAnswer}
       questions={this.state.questions[this.state.count]}
       nextQuestion={this.nextQuestion}
       count={this.state.count+1}
       questionsCount={this.state.questions.length}
     /> 
   }
+  
   handleResources = () => {
     this.setState({
       resources: true
     })
   }
+  storeUserAnswer = (userInput) => {
+    let answeredQuestions = this.state.questions;
+    answeredQuestions[this.state.count]["userResult"] = userInput;
+    this.setState({
+      questions: answeredQuestions
+    })
+  }
+
   nextQuestion = (userResult) => {
     
     if(this.state.count < this.state.questions.length-1){
