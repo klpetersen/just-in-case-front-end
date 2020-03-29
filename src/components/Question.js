@@ -62,7 +62,7 @@ export default function Question(props) {
                             onClick={() => submitAnswer(false,props.questions.id)}>False</button>
                         </div>
                     </div>
-                    <p className="bold">{props.count}/{props.questionsCount}</p>
+                    <p className="bold">{props.count}/{'10'}</p>
                 </div>
                 <div className="answer card" ref={ref => {answerRef = ref}}
                     style={{display: 'none'}}

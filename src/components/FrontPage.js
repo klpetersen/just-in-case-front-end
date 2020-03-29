@@ -4,7 +4,7 @@ import '../css/Shared.css'
 
 export default function FrontPage(props) {
     return (
-        <div class='container'>
+        <div className='container'>
             <div className='front-title-container'>
                 <h1>Do you really know about Coronavirus?</h1>
             </div>

@@ -8,20 +8,20 @@ export default function Results(props) {
     }
 
     const punchLine = () => {
-        const percentage = props.totalRight * 1.0 / 16 * 100;
+        const percentage = props.totalRight * 1.0 / 10 * 100;
         switch (true) {
             case (percentage < 30.0):
-                return <div classname='punchline'> below 30 </div>;
+                return <div className='punchline'> below 30 </div>;
             case (percentage < 60.0):
-                return <div classname='punchline'> below 60</div>;                  
+                return <div className='punchline'> below 60</div>;                  
             case (percentage < 80.0):
-                return <div classname='punchline'> below 80</div>;
+                return <div className='punchline'> below 80</div>;
             case (percentage < 90.0):
-                return <div classname='punchline'> below 90</div>;
+                return <div className='punchline'> below 90</div>;
             case (percentage < 100.0):
-                return <div classname='punchline'>below 100</div>;            
+                return <div className='punchline'>below 100</div>;            
             default:
-                return <div classname='punchline'>100</div>;
+                return <div className='punchline'>100</div>;
         }   
     }
 
@@ -33,7 +33,7 @@ export default function Results(props) {
             </header>
 
             <button className="menu-button" onClick={() => setSeeResults(!seeResults)}>See Answers</button>
-            {seeResults && props.questions.map(question =>
+            {seeResults && props.questions.slice(0,10).map(question =>
                 <div className={`question-box ${question.userResult === 'wrong' ?` wrong-answer` : ''}`}>
                     <div className='question'>
                         {question.question}

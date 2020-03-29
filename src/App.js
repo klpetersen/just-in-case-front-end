@@ -47,7 +47,6 @@ export default class App extends Component {
       questions={this.state.questions[this.state.count]}
       nextQuestion={this.nextQuestion}
       count={this.state.count+1}
-      questionsCount={this.state.questions.length}
     /> 
   }
   
@@ -66,7 +65,7 @@ export default class App extends Component {
 
   nextQuestion = (userResult) => {
     
-    if(this.state.count < this.state.questions.length-1){
+    if(this.state.count < 10-1){
       this.setState({
         count: this.state.count + 1,
         totalRight: userResult === 'correct' ? this.state.totalRight + 1 : this.state.totalRight 
