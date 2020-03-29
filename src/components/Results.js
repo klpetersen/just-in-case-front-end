@@ -10,7 +10,7 @@ export default function Results(props) {
     return (
         <div className='results'>
             {props.questions.map(question =>
-                <div>
+                <div className="question-box">
                     <div className='question'>
                         {question.question}
                     </div>
