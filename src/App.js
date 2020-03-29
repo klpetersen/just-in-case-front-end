@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Question from './components/Question'
 import Results from './components/Results'
 import FrontPage from './components/FrontPage'
+import Resources from './components/Resources'
 import './css/Shared.css'
 
 export default class App extends Component {
@@ -58,14 +59,15 @@ export default class App extends Component {
   render() {
     return (
       <div className='main-container'>
-        {this.state.frontPage ?
+        {/* {this.state.frontPage ?
           <FrontPage toggleStartQuiz={this.toggleStartQuiz} />
           :
           this.state.completed ? 
             <Results questions={this.state.questions} reset={this.reset} />
             :
             this.state.questions && this.displayQuestion()
-        }
+        } */}
+        <Resources />
       </div>
     )
   }
