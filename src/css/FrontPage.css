@@ -1,5 +1,14 @@
-.body {
+.container {
+  background: url(../images/breaking-news-final.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%; 
+  height: 100vh; 
   margin: auto;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 2rem; 
+  opacity: 0.9;
 }
+
+
+
