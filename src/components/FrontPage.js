@@ -5,11 +5,10 @@ import '../css/Shared.css'
 export default function FrontPage(props) {
     return (
         <div class='container'>
-            <div className='logo-header'> 
-            </div>
             <h1>Just In Ques(o)</h1>
-                <button onClick={props.toggleStartQuiz}>Start Quiz</button>
-
+            <div className='start-btn-container'> 
+                <button onClick={props.toggleStartQuiz} className='start-btn'>START QUIZ</button>
+            </div>
         </div>
     )
 }
