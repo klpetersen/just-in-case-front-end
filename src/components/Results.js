@@ -32,7 +32,7 @@ export default function Results(props) {
                 {punchLine()}    
             </header>
 
-            <button className="menu-button" onClick={() => setSeeResults(!seeResults)}>See answers</button>
+            <button className="menu-button" onClick={() => setSeeResults(!seeResults)}>See Answers</button>
             {seeResults && props.questions.map(question =>
                 <div className="question-box">
                     <div className='question'>
@@ -49,7 +49,7 @@ export default function Results(props) {
                     </div>
                 </div>
             )}
-            <button className="menu-button" onClick={handleBack}>Back</button>
+            <button className="menu-button" onClick={handleBack}>Retake Quiz</button>
             <button className="menu-button" onClick={props.handleResources}>More Resources</button>
 
         </div>
