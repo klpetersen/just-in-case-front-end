@@ -5,7 +5,9 @@ import '../css/Shared.css'
 export default function FrontPage(props) {
     return (
         <div class='container'>
-            <h1>Just In Ques(o)</h1>
+            <div className='front-title-container'>
+                <h1>Do you really know about Coronavirus?</h1>
+            </div>
             <div className='start-btn-container'> 
                 <button onClick={props.toggleStartQuiz} className='start-btn'>START QUIZ</button>
             </div>
