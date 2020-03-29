@@ -32,8 +32,12 @@ export default function Question(props) {
           trueRef.className = value === answer && answer ? 'question-button correct-button' : 'question-button disabled-button'
           falseRef.disabled = true;
           falseRef.className =  value === answer && !answer ? 'question-button correct-button' : 'question-button disabled-button'
-          
-        }
+          if(value) { 
+            trueRef.className += ' picked-button' 
+          } else { 
+            falseRef.className += ' picked-button' 
+          }
+      }
 
       const handleNext = () => {
         trueRef.disabled = false;
