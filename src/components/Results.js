@@ -34,7 +34,7 @@ export default function Results(props) {
 
             <button className="menu-button" onClick={() => setSeeResults(!seeResults)}>See Answers</button>
             {seeResults && props.questions.map(question =>
-                <div className={`question-box ${question.userResult ? '' : 'wrong-answer'}`}>
+                <div className={`question-box ${question.userResult === 'wrong' ?` wrong-answer` : ''}`}>
                     <div className='question'>
                         {question.question}
                     </div>

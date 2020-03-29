@@ -72,9 +72,10 @@ export default class App extends Component {
         totalRight: userResult === 'correct' ? this.state.totalRight + 1 : this.state.totalRight 
       });
     } else {
-      this.setState({completed:true})
+        this.setState({completed:true,
+        totalRight: userResult === 'correct' ? this.state.totalRight + 1 : this.state.totalRight
+      })
     }
-    console.log(this.state.totalRight);
   }
 
   render() {
