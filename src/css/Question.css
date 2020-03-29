@@ -1,5 +1,5 @@
 .question-container {
-  background: url(../images/quiz-background-image.jpg);
+  background: url(../images/CORONA-virus-in-pink.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -18,7 +18,7 @@ p {
 }
 
 .card {
-  background-color: #ccffcc;
+  background-color: rgba(209, 157, 200, 0.82);
   font-size: 1rem;
   border-radius: 50px;
   margin: auto;
@@ -45,7 +45,7 @@ p {
 .user-answers{
   display: flex;
   justify-content: center;
-  background-color: #ccffcc;
+  
   font-size: 1rem;
   border-radius: 5px;
   width: 50%;
@@ -54,28 +54,43 @@ p {
 }
 
 .question-button{
-  background-color: #ccffcc;
+  background-color: aliceblue;
   color: black;
   height: 50px;
   width: 100px;
   font-size: 1rem;
   border-radius: 50px;
   margin-right: 20px;
+  cursor: pointer;
 }
 
 .question-button:active, 
 .question-button:hover { 
-  background-color: white;
+  background-color: rgb(148, 206, 131);
+  cursor: pointer;
 }
 
 .disabled-button{
   background-color: #bfbfbf;
   color: #a6a6a6;
+  cursor: pointer;
 }
 
-.correct-button{
+.disabled-button:active, 
+.disabled-button:hover { 
+  background-color: #bfbfbf;
+  color: #a6a6a6;
+  cursor: pointer;
+}
+
+/* .correct-button{
   background-color: rgb(114, 184, 93);
   color: black;
+} */
+
+.picked-button { 
+  border: solid black 2px; 
+  cursor: pointer;
 }
 
 .answer {
@@ -88,4 +103,5 @@ p {
 
 .answer-description{
   font-size: 1.2rem;
+  line-height: 1.5em;
 }
