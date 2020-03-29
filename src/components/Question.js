@@ -10,8 +10,8 @@ export default function Question(props) {
 
     const submitAnswer = (value, id) => {
         let answer = props.questions.answer;
-        props.storeUserAnswer(value);
         let result = value === answer ? 'correct' : 'wrong';
+        props.storeUserAnswer(result);
         setUserResult(result);
         fetch(`https://justincase-backend.herokuapp.com/questions/${id}`,{
             method: 'PATCH',
