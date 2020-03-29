@@ -2,12 +2,27 @@
 .results {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background: url(../images/quiz-background-image.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment:  fixed;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.result-header {
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 4rem;
+  padding: 10px;
+  width: 40%;
+  border-radius: 20px;
+  background-color: rgba(152, 218, 189, .9);
+  box-shadow: rgba(0,0,0,0.7) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 50px;
 }
 
 .question-box {
@@ -19,6 +34,10 @@
   width: 60%;
   border-radius: 20px;
   box-shadow: rgba(0,0,0,0.7) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 50px;
+}
+
+.wrong-answer{
+  background-color: #ff8080;
 }
 
 .bold {
@@ -42,11 +61,17 @@
 button{
   background-color: #ccffcc;
   color: black;
-  height: 50px;
-  width: 100px;
   font-size: 1rem;
   border-radius: 5px;
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+.menu-button {
+  border-radius: 40px;
+  padding: 5px 20px 5px 20px;
+  font-size: 2rem;
+  height: default;
+  width: default;
 }

@@ -10,6 +10,7 @@ export default function Question(props) {
 
     const submitAnswer = (value, id) => {
         let answer = props.questions.answer;
+        props.storeUserAnswer(value);
         let result = value === answer ? 'correct' : 'wrong';
         setUserResult(result);
         fetch(`https://justincase-backend.herokuapp.com/questions/${id}`,{
@@ -28,16 +29,16 @@ export default function Question(props) {
 
       const disableButtons = (answer, value) => {
           trueRef.disabled = true;
-          trueRef.className = value === answer && answer ? 'button correct-button' : 'button disabled-button'
+          trueRef.className = value === answer && answer ? 'question-button correct-button' : 'question-button disabled-button'
           falseRef.disabled = true;
-          falseRef.className =  value === answer && !answer ? 'button correct-button' : 'button disabled-button'
+          falseRef.className =  value === answer && !answer ? 'question-button correct-button' : 'question-button disabled-button'
       }
 
       const handleNext = () => {
         trueRef.disabled = false;
         falseRef.disabled = false;
-        trueRef.className = 'button';
-        falseRef.className = 'button';
+        trueRef.className = 'question-button';
+        falseRef.className = 'question-button';
         answerRef.style.display="none";
         props.nextQuestion(userResult);
       }
@@ -53,11 +54,11 @@ export default function Question(props) {
                     <div className='user-answers'>
                         <div> 
                             {/* The buttons will change color to either green or red depending on the answer */}
-                            <button className='button' ref={ref => {trueRef = ref}}
+                            <button className='question-button' ref={ref => {trueRef = ref}}
                             onClick={() => submitAnswer(true,props.questions.id)}>True</button>
                         </div>
                         <div>
-                            <button className='button' ref = {ref => {falseRef = ref}}
+                            <button className='question-button' ref = {ref => {falseRef = ref}}
                             onClick={() => submitAnswer(false,props.questions.id)}>False</button>
                         </div>
                     </div>
@@ -68,7 +69,7 @@ export default function Question(props) {
                 >
                     <p className="answer-title bold">Answer: {props.questions.answer.toString().toUpperCase()}</p>
                     <p className="answer-description">{props.questions.reason}</p>
-                    <button className='button'
+                    <button className='question-button'
                         onClick={() => handleNext()}
                     >Next</button>
                 </div>

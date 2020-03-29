@@ -28,17 +28,20 @@ export default function Results(props) {
     return (
         <div className='results'>
             <header className='result-header'>
-                Results        
+                <p>Results:</p>
+                {punchLine()}    
             </header>
-            {punchLine()}
-            <button onClick={() => setSeeResults(true)}>See answers</button>
+
+            <button className="menu-button" onClick={() => setSeeResults(!seeResults)}>See Answers</button>
             {seeResults && props.questions.map(question =>
-                <div className="question-box">
+                <div className={`question-box ${question.userResult ? '' : 'wrong-answer'}`}>
                     <div className='question'>
                         {question.question}
                     </div>
                     <div className='reason'>
                         {question.reason}<br></br>
+                        <br></br>
+                        <p className="bold">Source:</p>
                         <a href={question.source}>{question.source}</a>
                     </div>
                     <div className='stats'>
@@ -46,8 +49,9 @@ export default function Results(props) {
                     </div>
                 </div>
             )}
-            <button onClick={handleBack}>BACK</button>
-            <button onClick={props.handleResources}>More Resources</button>
+            <button className="menu-button" onClick={handleBack}>Retake Quiz</button>
+            <button className="menu-button" onClick={props.handleResources}>More Resources</button>
+
         </div>
     )
 }
