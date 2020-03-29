@@ -1,13 +1,55 @@
 .question-container {
-  margin: auto;
+  background: url(../images/quiz-background-image.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%; 
+  height: 100vh;
   text-align: center;
-  padding-top: 100px;
+}
+
+.buffer {
+  height: 1px;
+}
+
+p {
+  margin-top: 0;
+}
+
+.card {
+  background-color: #ccffcc;
+  font-size: 1rem;
+  border-radius: 50px;
+  margin: auto;
+  position: relative;
+  padding: 10px;
+  padding-top: 20px;
+  box-shadow: rgba(0,0,0,0.7) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 50px;
+}
+
+.question-card {
   width: 60%;
+  margin: auto;
+  margin-top: 10%;
+}
+
+.question {
+  margin-top: 0;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .user-answers{
   display: flex;
   justify-content: center;
+  background-color: #ccffcc;
+  font-size: 1rem;
+  border-radius: 5px;
+  width: 50%;
+  margin: auto;
+  position: relative;
 }
 
 button{
@@ -16,7 +58,7 @@ button{
   height: 50px;
   width: 100px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 50px;
   margin-right: 20px;
 }
 

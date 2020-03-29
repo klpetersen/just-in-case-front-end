@@ -42,31 +42,36 @@ export default function Question(props) {
         props.nextQuestion(userResult);
       }
     
-    return (
-        <div class="question-container">
-            <p>{props.count}/{props.questionsCount}</p>
-            <h1 className='question'> 
-                {props.questions.question}
-            </h1>
-            <div className='user-answers'>
-                <div> 
-                    {/* The buttons will change color to either green or red depending on the answer */}
-                    <button className='button' ref={ref => {trueRef = ref}}
-                    onClick={() => submitAnswer(true,props.questions.id)}>TRUE</button>
+      return (
+        <div className="question-container">
+            <div className="buffer"></div>
+            <div className="question-card">
+                <div className="answer card">
+                    <h1 className='question'> 
+                        {props.questions.question}
+                    </h1>
+                    <div className='user-answers'>
+                        <div> 
+                            {/* The buttons will change color to either green or red depending on the answer */}
+                            <button className='button' ref={ref => {trueRef = ref}}
+                            onClick={() => submitAnswer(true,props.questions.id)}>True</button>
+                        </div>
+                        <div>
+                            <button className='button' ref = {ref => {falseRef = ref}}
+                            onClick={() => submitAnswer(false,props.questions.id)}>False</button>
+                        </div>
+                    </div>
+                    <p className="bold">{props.count}/{props.questionsCount}</p>
                 </div>
-                <div>
-                    <button className='button' ref = {ref => {falseRef = ref}}
-                    onClick={() => submitAnswer(false,props.questions.id)}>FALSE</button>
+                <div className="answer card" ref={ref => {answerRef = ref}}
+                    style={{display: 'none'}}
+                >
+                    <p className="answer-title bold">Answer: {props.questions.answer.toString().toUpperCase()}</p>
+                    <p className="answer-description">{props.questions.reason}</p>
+                    <button className='button'
+                        onClick={() => handleNext()}
+                    >Next</button>
                 </div>
-            </div>
-            <div class="answer" ref={ref => {answerRef = ref}}
-                style={{display: 'none'}}
-            >
-                <p class="answer-title">Answer: {props.questions.answer.toString().toUpperCase()}</p>
-                <p class="answer-description">{props.questions.reason}</p>
-                <button className='button'
-                    onClick={() => handleNext()}
-                >NEXT</button>
             </div>
         </div>
     )
