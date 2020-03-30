@@ -46,8 +46,10 @@
 @media screen and (max-width: 800px) {
 
   .container {
-    background-size: 930px;
-    background-position: bottom;
+    /* background-size: 930px;
+    background-position: center; */
+    min-height: 100vh;
+    height: auto;
   }
 
   .front-title-container h1 {
@@ -74,7 +76,7 @@
 
   .front-title-container h1 {
     font-size: 180%;
-    padding: 0.8em;
+    padding: 1em;
   }
 
   .start-btn-container {
