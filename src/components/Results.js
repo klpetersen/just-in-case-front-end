@@ -16,7 +16,7 @@ export default function Results(props) {
             case (percentage < 30.0):
                 return <div className='punchline'> Keep washing your hands! </div>;
             case (percentage < 60.0):
-                return <div className='punchline'> You can do better! try again </div>;                  
+                return <div className='punchline'> You can do better! Try again </div>;                  
             case (percentage <= 80.0):
                 return <div className='punchline'> You're doing great keep going </div>;
             case (percentage <= 90.0):
