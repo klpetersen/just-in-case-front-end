@@ -1,6 +1,11 @@
 import React, {useState} from 'react'
 import '../css/Results.css'
 import covidCheers from '../images/covidCheers.png'
+import zero from '../images/0.png'
+import below30 from '../images/below30.png'
+import below60 from '../images/below60.png'
+import below80 from '../images/below80.png'
+import below90 from '../images/below90.png'
 
 export default function Results(props) {
     const [seeResults, setSeeResults] = useState(false);
@@ -11,18 +16,18 @@ export default function Results(props) {
     const punchLine = () => {
         const percentage = props.totalRight * 1.0 / 10 * 100;
         switch (true) {
-            case (percentage == 0):
-                return <div className='punchline'> I think you need more toilet paper! </div>;
+            case (percentage === 0):
+                return <div className='punchline'> I think you need more toilet paper!<br></br><img src={zero} alt="toilet paper"></img> </div>;
             case (percentage < 30.0):
-                return <div className='punchline'> Keep washing your hands! </div>;
+                return <div className='punchline'> Keep washing your hands!<br></br><img src={below30} alt="wash hands"></img> </div>;
             case (percentage < 60.0):
-                return <div className='punchline'> You can do better! Try again </div>;                  
+                return <div className='punchline'> You can do better! Try again <br></br><img src={below60} alt="try again"></img></div>;                  
             case (percentage <= 80.0):
-                return <div className='punchline'> You're doing great keep going </div>;
+                return <div className='punchline'> You're doing great keep going<br></br><img src={below80} alt="keep going"></img> </div>;
             case (percentage <= 90.0):
-                return <div className='punchline'> You're allowed to binge on Netflix </div>;            
+                return <div className='punchline'> You're allowed to binge on Netflix<br></br><img src={below90} alt="netflix"></img> </div>; 
             default:
-                return <div className='punchline'> Awesome job buttercup!<br></br><img src={covidCheers}></img></div>;
+                return <div className='punchline'> Awesome job buttercup!<br></br><img src={covidCheers} alt="great job!"></img></div>;
         }   
     }
 
