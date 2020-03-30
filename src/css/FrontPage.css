@@ -42,3 +42,43 @@
   cursor: pointer;
   border: red solid 2px;
 }
+
+@media screen and (max-width: 800px) {
+
+  .container {
+    background-size: 930px;
+    background-position: bottom;
+  }
+
+  .front-title-container h1 {
+    font-size: 180%;
+    margin-top: -8%;
+    padding: 1.72em;
+  }
+
+  .start-btn-container {
+    margin-bottom: 1vh;
+  }
+
+  .start-btn {
+    width: 40%;
+  }
+
+}
+
+
+@media screen and (max-width: 500px) {
+  .container {
+    background-size: 730px;
+  }
+
+  .front-title-container h1 {
+    font-size: 180%;
+    padding: 0.8em;
+  }
+
+  .start-btn-container {
+    margin-bottom: 6vh;
+  }
+
+}

@@ -65,3 +65,19 @@
   line-height: 2rem;
   margin-left: 1.3rem;
 }
+
+@media screen and (max-width: 800px){
+
+  .resource h2 {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px){
+
+  .resource {
+    margin-left: 5%;
+    width: 90%;
+  }
+  
+}

@@ -98,11 +98,6 @@ p {
   cursor: pointer;
 }
 
-/* .correct-button{
-  background-color: rgb(114, 184, 93);
-  color: black;
-} */
-
 .picked-button { 
   border: solid black 2px; 
   cursor: pointer;
@@ -119,4 +114,22 @@ p {
 .answer-description{
   font-size: 1.2rem;
   line-height: 1.5em;
+}
+
+@media screen and (max-width: 500px){
+
+  .answer {
+    margin: 0;
+  }
+
+  .question-card {
+    width: 95%;
+    overflow: scroll;
+  }
+
+  .question-container {
+    min-height: 100vh;
+    height: auto;
+  }
+
 }

@@ -19,7 +19,7 @@
   font-weight: bold;
   font-size: 4rem;
   padding: 10px;
-  width: 40%;
+  width: 44%;
   border-radius: 20px;
   background-color: rgba(152, 218, 189, .9);
   box-shadow: rgba(0,0,0,0.7) 0px 2px 3px, inset rgba(0,0,0,0.2) 0px -1px 50px;
@@ -75,4 +75,17 @@ button{
   height: default;
   width: default;
   cursor: pointer;
+}
+
+@media screen and (max-width: 500px){
+
+  .results {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .result-header {
+    width: 90%;
+    font-size: 3.5rem;
+  }
 }
