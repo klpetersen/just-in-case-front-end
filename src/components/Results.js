@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import '../css/Results.css'
+import covidCheers from '../images/covidCheers.png'
 
 export default function Results(props) {
     const [seeResults, setSeeResults] = useState(false);
@@ -21,7 +22,7 @@ export default function Results(props) {
             case (percentage <= 90.0):
                 return <div className='punchline'> You're allowed to binge on Netflix </div>;            
             default:
-                return <div className='punchline'> Awesome job buttercup!</div>;
+                return <div className='punchline'> Awesome job buttercup!<br></br><img src={covidCheers}></img></div>;
         }   
     }
 

@@ -44,6 +44,7 @@ export default class Resources extends Component {
                         </ul>
                     </div>
                 </div>
+                <button className='menu-button' onClick={this.props.reset}>BACK</button>
             </div>
         )
     }
