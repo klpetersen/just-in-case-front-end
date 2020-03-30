@@ -10,23 +10,25 @@ export default function Results(props) {
     const punchLine = () => {
         const percentage = props.totalRight * 1.0 / 10 * 100;
         switch (true) {
+            case (percentage == 0):
+                return <div className='punchline'> I think you need more toilet paper! </div>;
             case (percentage < 30.0):
-                return <div className='punchline'> below 30 </div>;
+                return <div className='punchline'> Keep washing your hands! </div>;
             case (percentage < 60.0):
-                return <div className='punchline'> below 60</div>;                  
-            case (percentage == 80.0):
-                return <div className='punchline'> below 80</div>;
-            case (percentage == 90.0):
-                return <div className='punchline'> below 90</div>;            
+                return <div className='punchline'> You can do better! try again </div>;                  
+            case (percentage <= 80.0):
+                return <div className='punchline'> You're doing great keep going </div>;
+            case (percentage <= 90.0):
+                return <div className='punchline'> You're allowed to binge on Netflix </div>;            
             default:
-                return <div className='punchline'>100</div>;
+                return <div className='punchline'> Awesome job buttercup!</div>;
         }   
     }
 
     return (
         <div className='results'>
             <header className='result-header'>
-                <p>Results:</p>
+            <p>Results: {(props.totalRight * 1.0 / 10 * 100).toFixed(0)}%</p>
                 {punchLine()}    
             </header>
 
@@ -37,7 +39,7 @@ export default function Results(props) {
                         {question.question}
                     </div>
                     <div className='reason'>
-                        {question.reason}<br></br>
+                        {question.reason }<br></br>
                         <br></br>
                         <p className="bold">Source:</p>
                         <a href={question.source}>{question.source}</a>
