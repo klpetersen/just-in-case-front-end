@@ -45,7 +45,6 @@ p {
 .user-answers{
   display: flex;
   justify-content: center;
-  
   font-size: 1rem;
   border-radius: 5px;
   width: 50%;
@@ -69,6 +68,7 @@ p {
 .question-button:hover { 
   background-color: rgb(148, 206, 131);
   cursor: pointer;
+}
 
 .next-button { 
   background-color: #ccffcc;
