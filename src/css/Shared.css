@@ -11,3 +11,12 @@ html {
 body { 
     margin: 0; 
 }
+
+.menu-button {
+    border-radius: 40px;
+    padding: 5px 20px 5px 20px;
+    font-size: 2rem;
+    height: default;
+    width: default;
+    cursor: pointer;
+  }

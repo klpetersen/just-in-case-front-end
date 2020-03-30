@@ -81,7 +81,7 @@ export default class App extends Component {
     return (
       <div className='main-container'>
         {this.state.resources ?
-          <Resources />
+          <Resources reset={this.reset} />
           : 
           this.state.frontPage ?
             <FrontPage toggleStartQuiz={this.toggleStartQuiz} />
